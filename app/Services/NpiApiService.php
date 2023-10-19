@@ -27,6 +27,8 @@ class NpiApiService
             ]
         ];
 
+        var_dump($params);
+
         try {
             $response = $this->client->request('GET', '', $params);
             return json_decode($response->getBody(), true);
