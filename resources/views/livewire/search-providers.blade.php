@@ -1,3 +1,5 @@
 <div>
-    {{-- The whole world belongs to you. --}}
+    <input type="text" id="firstName" wire:model="firstName">
+
+    {{ $firstName }}
 </div>
