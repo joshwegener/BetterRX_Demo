@@ -10,6 +10,10 @@ class SearchProviders extends Component
 
     public function render()
     {
-        return view('livewire.search-providers');
+        sleep(1); // simulate slow api call
+
+        $results = ['test 1', 'test 2']; // get results from api
+
+        return view('livewire.search-providers', [$results]);
     }
 }
