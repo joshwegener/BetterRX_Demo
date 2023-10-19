@@ -7,11 +7,7 @@
         </th>
         @forelse($results as $result)
             <tr wire:loading.class="opacity-50">
-                @if ($result['result_count'] > 0)
-                    <td>$result['result_count']</td>
-                @else
-                    <td>No results found!</td>
-                @endif
+                {{ $result['result_count'] ?? 0 > 0 ? $result['result_count'] : 'No results found!' }}
             </tr>
         @empty
             <tr>
