@@ -30,7 +30,7 @@ class NpiApiService
         $params = [
             'query' => [
                 'version' => '2.1',
-                'first_name' => $filters['firstName'] ?? '', // Default to empty string if not set
+                'first_name' => "*{$filters['firstName']}*"
                 // Add other query parameters here
             ]
         ];
