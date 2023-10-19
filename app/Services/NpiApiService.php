@@ -36,6 +36,7 @@ class NpiApiService
         ];
 
         try {
+            var_dump($this->client->request("GET","", $params));
             $response = $this->client->request('GET', '', $params);
             return json_decode($response->getBody(), true);
         } catch (GuzzleException $e) {
