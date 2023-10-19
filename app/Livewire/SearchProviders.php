@@ -11,9 +11,9 @@ class SearchProviders extends Component
 
     public function render(NpiApiService $api)
     {
-        $results = $api->searchProviders(compact(
-            'firstName'
-        ));
+        $results = $api->searchProviders([
+            'firstName' => $this->firstName,
+        ]);
 
         return view('livewire.search-providers')->with(compact('results'));
     }
