@@ -8,7 +8,14 @@
         @forelse($results as $result)
             <tr wire:loading.class="opacity-50">
                 {{ ($result['result_count'] ?? 0) > 0 ? $result['result_count'] : 'No results found!' }}
-                {{ var_dump($result['basic']) }}
+                <br />
+                <br />
+                <br />
+                <hr />
+                {{ var_dump($result) }}
+                <hr />
+                <br />
+                <br />
             </tr>
         @empty
             <tr>
