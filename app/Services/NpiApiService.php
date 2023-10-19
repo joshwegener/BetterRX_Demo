@@ -30,13 +30,13 @@ class NpiApiService
         $params = [
             'query' => [
                 'version' => '2.1',
-                'first_name' => "*{$filters['firstName']}*"
+                'first_name' => "*{$filters['firstName']}*",
                 // Add other query parameters here
             ]
         ];
 
         try {
-            var_dump($this->client->request("GET","", $params));
+            var_dump($params);
             $response = $this->client->request('GET', '', $params);
             return json_decode($response->getBody(), true);
         } catch (GuzzleException $e) {
