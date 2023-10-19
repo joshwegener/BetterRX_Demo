@@ -7,7 +7,7 @@
         </th>
         @forelse($results as $result)
             <tr wire:loading.class="opacity-50">
-                <td>{{ $result }}</td>
+                <td>@dd($result)</td>
             </tr>
         @empty
             <tr>
