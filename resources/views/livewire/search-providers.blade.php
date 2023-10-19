@@ -1,5 +1,5 @@
 <div>
-    <input type="text" id="first" wire:model="first">
+    <input type="text" id="firstName" wire:model.live="firstName">
 
-    {{ $first }}
+    {{ $firstName }}
 </div>
