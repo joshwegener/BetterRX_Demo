@@ -14,6 +14,6 @@ class SearchProviders extends Component
 
         $results = ['test 1', 'test 2']; // get results from api
 
-        return view('livewire.search-providers', [$results]);
+        return view('livewire.search-providers')->with(compact('results'));
     }
 }
