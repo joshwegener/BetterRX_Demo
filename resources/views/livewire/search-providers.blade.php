@@ -1,5 +1,5 @@
 <div>
-    <input type="text" id="firstName" wire:model="firstName">
+    <input type="text" id="first" wire:model="first">
 
-    {{ $firstName ?? ''}}
+    {{ $first }}
 </div>

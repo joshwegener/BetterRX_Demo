@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class SearchProviders extends Component
 {
-    public $firstName;
+    public $first;
 
     public function render()
     {
