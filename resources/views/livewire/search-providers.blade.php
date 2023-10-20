@@ -3,11 +3,11 @@
 
     <table class="table table-striped">
     <thead>
-        <th>
-            <td scope="col">NPI</td>
-            <td scope="col">First Name</td>
-            <td scope="col">Last Name</td>
-        </th>
+        <tr>
+            <th scope="col">NPI</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+        </tr>
     </thead>
     <tbody>
         @forelse($results as $result)
