@@ -1,6 +1,6 @@
 <div>
     <form class="form-inline">
-        <input class="form-control" type="text" id="firstName" wire:model.live="firstName" placeholder="First Name">
+        <input class="form-control mb-2 mr-sm-2" type="text" id="firstName" wire:model.live="firstName" placeholder="First Name">
         <input class="form-control" type="text" id="lastName" wire:model.live="lastName" placeholder="Last Name">
         <input class="form-control" type="text" id="npiNumber" wire:model.live="npiNumber" placeholder="NPI Number">
         <input class="form-control" type="text" id="taxonomyDescription" wire:model.live="taxonomyDescription" placeholder="Taxonomy Description">
