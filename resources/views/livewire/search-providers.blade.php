@@ -19,7 +19,7 @@
             <tr wire:loading.class="opacity-50">
                 @if($result['enumeration_type'] === 'NPI-1')
                     <td>{{ $result['number'] }}</td>
-                    <td>{{ Str::title($result['basic']['first_name'] . $result['basic']['last_name']) }}</td>
+                    <td>{{ Str::title($result['basic']['first_name'] . ' ' . $result['basic']['last_name']) }}</td>
                 @else
                     <td>{{ $result['number'] }}</td>
                     <td>{{ $result['basic']['organization_name'] }}</td>
