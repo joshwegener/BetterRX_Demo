@@ -22,10 +22,7 @@ class NpiApiService
     {
         // Validate first_name
         if (empty($filters['firstName']) || strlen($filters['firstName']) < 2) {
-            return [
-                'status' => 'failure',
-                'message' => 'The first name must be at least 2 characters long',
-            ];
+            return [];
         }
 
         $params = [
