@@ -1,11 +1,13 @@
 <div>
-    <input type="text" id="firstName" wire:model.live="firstName" placeholder="First Name">
-    <input type="text" id="lastName" wire:model.live="lastName" placeholder="Last Name">
-    <input type="text" id="npiNumber" wire:model.live="npiNumber" placeholder="NPI Number">
-    <input type="text" id="taxonomyDescription" wire:model.live="taxonomyDescription" placeholder="Taxonomy Description">
-    <input type="text" id="city" wire:model.live="city" placeholder="City">
-    <input type="text" id="state" wire:model.live="state" placeholder="State">
-    <input type="text" id="zip" wire:model.live="zip" placeholder="Zip">
+    <form class="form-inline">
+        <input class="form-control" type="text" id="firstName" wire:model.live="firstName" placeholder="First Name">
+        <input class="form-control" type="text" id="lastName" wire:model.live="lastName" placeholder="Last Name">
+        <input class="form-control" type="text" id="npiNumber" wire:model.live="npiNumber" placeholder="NPI Number">
+        <input class="form-control" type="text" id="taxonomyDescription" wire:model.live="taxonomyDescription" placeholder="Taxonomy Description">
+        <input class="form-control" type="text" id="city" wire:model.live="city" placeholder="City">
+        <input class="form-control" type="text" id="state" wire:model.live="state" placeholder="State">
+        <input class="form-control" type="text" id="zip" wire:model.live="zip" placeholder="Zip">
+    </form>
 
     <table class="table table-striped">
     <thead>
