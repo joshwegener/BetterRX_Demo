@@ -4,9 +4,9 @@
     <table class="table table-striped">
     <thead>
         <th>
-            <th scope="col">NPI</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
+            <td scope="col">NPI</td>
+            <td scope="col">First Name</td>
+            <td scope="col">Last Name</td>
         </th>
     </thead>
     <tbody>
