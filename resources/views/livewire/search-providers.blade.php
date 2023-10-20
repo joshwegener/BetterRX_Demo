@@ -1,5 +1,6 @@
 <div>
     <input type="text" id="firstName" wire:model.live="firstName">
+    <input type="text" id="lastName" wire:model.live="lastName">
 
     <table class="table table-striped">
     <thead>

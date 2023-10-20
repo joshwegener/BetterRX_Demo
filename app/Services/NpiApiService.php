@@ -25,10 +25,15 @@ class NpiApiService
             return [];
         }
 
+        if (empty($filters['lastName']) || strlen($filters['lastName']) < 2) {
+            return [];
+        }
+
         $params = [
             'query' => [
                 'version' => '2.1',
                 'first_name' => "*{$filters['firstName']}*",
+                'last_name' => "*{$filters['lastName']}*",
                 // Add other query parameters here
             ]
         ];

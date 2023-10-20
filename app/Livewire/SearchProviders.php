@@ -8,11 +8,13 @@ use Livewire\Component;
 class SearchProviders extends Component
 {
     public $firstName;
+    public $lastName;
 
     public function render(NpiApiService $api)
     {
         $results = $api->searchProviders([
             'firstName' => $this->firstName,
+            'lastName' => $this->lastName,
         ]);
 
         return view('livewire.search-providers')->with(compact('results'));
