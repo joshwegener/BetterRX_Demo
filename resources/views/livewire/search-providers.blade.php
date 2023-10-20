@@ -9,20 +9,18 @@
         <input class="form-control" type="text" id="zip" wire:model.live="zip" placeholder="Zip">
     </form>
 
-    <form>
-        <div class="form-row">
-            <div class="col-md-4 mb-3">
-                <label for="firstName">First name</label>
-                <input type="text" class="form-control" id="firstName" placeholder="First name">
-            </div>
-            <div class="col-md-4 mb-3">
-                <label for="lastName">Last name</label>
-                <input type="text" class="form-control" id="lastName" placeholder="Last name">
-            </div>
-            <div class="col-md-4 mb-3">
-                <label for="npiNumber">NPI Number</label>
-                <input type="text" class="form-control" id="npiNumber" placeholder="NPI Number">
-            </div>
+    <form class="row">
+        <div class="col">
+            <label for="firstName">First name</label>
+            <input type="text" class="form-control" id="firstName" placeholder="First name">
+        </div>
+        <div class="col">
+            <label for="firstName">First name</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Last name">
+        </div>
+        <div class="col">
+            <label for="firstName">First name</label>
+            <input type="text" class="form-control" id="npiNumber" placeholder="NPI Number">
         </div>
     </form>
 
