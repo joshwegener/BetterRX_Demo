@@ -11,8 +11,7 @@
     <thead>
         <tr>
             <th scope="col">NPI</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
+            <th scope="col">Name</th>
         </tr>
     </thead>
     <tbody>
@@ -20,11 +19,10 @@
             <tr wire:loading.class="opacity-50">
                 @if($result['enumeration_type'] === 'NPI-1')
                     <td>{{ $result['number'] }}</td>
-                    <td>{{ $result['basic']['first_name'] }}</td>
-                    <td>{{ $result['basic']['last_name'] }}</td>
+                    <td>{{ Str::title($result['basic']['first_name'] . $result['basic']['last_name']) }}</td>
                 @else
                     <td>{{ $result['number'] }}</td>
-                    <td colspan="2">{{ $result['basic']['organization_name'] }}</td>
+                    <td>{{ $result['basic']['organization_name'] }}</td>
                 @endif
             </tr>
         @empty
