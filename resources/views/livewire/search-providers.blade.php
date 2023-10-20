@@ -1,26 +1,32 @@
 <div>
-    <form class="form-inline">
-        <input class="form-control" type="text" id="firstName" wire:model.live="firstName" placeholder="First Name">
-        <input class="form-control" type="text" id="lastName" wire:model.live="lastName" placeholder="Last Name">
-        <input class="form-control" type="text" id="npiNumber" wire:model.live="npiNumber" placeholder="NPI Number">
-        <input class="form-control" type="text" id="taxonomyDescription" wire:model.live="taxonomyDescription" placeholder="Taxonomy Description">
-        <input class="form-control" type="text" id="city" wire:model.live="city" placeholder="City">
-        <input class="form-control" type="text" id="state" wire:model.live="state" placeholder="State">
-        <input class="form-control" type="text" id="zip" wire:model.live="zip" placeholder="Zip">
-    </form>
-
     <form class="row">
         <div class="col">
             <label for="firstName">First name</label>
             <input type="text" class="form-control" id="firstName" placeholder="First name">
         </div>
         <div class="col">
-            <label for="firstName">First name</label>
+            <label for="lastName">Last name</label>
             <input type="text" class="form-control" id="lastName" placeholder="Last name">
         </div>
         <div class="col">
-            <label for="firstName">First name</label>
+            <label for="npiNumber">NPI Number</label>
             <input type="text" class="form-control" id="npiNumber" placeholder="NPI Number">
+        </div>
+        <div class="col">
+            <label for="taxonomyDescription">Taxonomy Description</label>
+            <input class="form-control" type="text" id="taxonomyDescription" wire:model.live="taxonomyDescription" placeholder="Taxonomy Description">
+        </div>
+        <div class="col">
+            <label for="city">City</label>
+            <input class="form-control" type="text" id="city" wire:model.live="city" placeholder="City">
+        </div>
+        <div class="col">
+            <label for="State">State</label>
+            <input class="form-control" type="text" id="state" wire:model.live="state" placeholder="State">
+        </div>
+        <div class="col">
+            <label for="zip">Zip</label>
+            <input class="form-control" type="text" id="zip" wire:model.live="zip" placeholder="Zip">
         </div>
     </form>
 
