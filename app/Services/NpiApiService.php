@@ -20,12 +20,24 @@ class NpiApiService
 
     public function searchProviders(array $filters): array
     {
-        if (strlen($filters['firstName']) > 2) {
-            $filters['firstName'] = "*{$filters['firstName']}*";
+        if (strlen($filters['firstName']) >= 2) {
+            $filters['firstName'] .= '*';
         }
 
-        if (strlen($filters['lastName']) > 2) {
-            $filters['lastName'] = "*{$filters['lastName']}*";
+        if (strlen($filters['lastName']) >= 2) {
+            $filters['lastName'] .= '*';
+        }
+
+        if (strlen($filters['taxonomyDescription']) >= 2) {
+            $filters['taxonomyDescription'] .= '*';
+        }
+
+        if (strlen($filters['city']) >= 2) {
+            $filters['city'] .= '*';
+        }
+
+        if (strlen($filters['zip']) >= 2) {
+            $filters['zip'] .= '*';
         }
 
         $params = [
@@ -33,11 +45,16 @@ class NpiApiService
                 'version' => '2.1',
                 'first_name' => $filters['firstName'],
                 'last_name' => $filters['lastName'],
-                // Add other query parameters here
+                'number' => $filters['npiNumber'],
+                'taxonomy_description' => $filters['taxonomyDescription'],
+                'city' => $filters['city'],
+                'state' => $filters['state'],
+                'postal_code' => $filters['zip'],
             ]
         ];
 
         try {
+            dd($params);
             $response = $this->client->request('GET', '', $params);
             $responseData = json_decode($response->getBody(), true);
 
