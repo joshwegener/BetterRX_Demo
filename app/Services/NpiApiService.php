@@ -20,20 +20,19 @@ class NpiApiService
 
     public function searchProviders(array $filters): array
     {
-        // Validate first_name
-        if (empty($filters['firstName']) || strlen($filters['firstName']) < 2) {
-            return [];
+        if (strlen($filters['firstName']) > 2) {
+            $filters['firstName'] = "*{$filters['firstName']}*";
         }
 
-        if (empty($filters['lastName']) || strlen($filters['lastName']) < 2) {
-            return [];
+        if (strlen($filters['lastName']) > 2) {
+            $filters['lastName'] = "*{$filters['lastName']}*";
         }
 
         $params = [
             'query' => [
                 'version' => '2.1',
-                'first_name' => "*{$filters['firstName']}*",
-                'last_name' => "*{$filters['lastName']}*",
+                'first_name' => $filters['firstName'],
+                'last_name' => $filters['lastName'],
                 // Add other query parameters here
             ]
         ];
