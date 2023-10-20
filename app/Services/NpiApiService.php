@@ -4,6 +4,7 @@ namespace App\Services;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
+use Illuminate\Support\Arr;
 
 class NpiApiService
 {
@@ -17,7 +18,7 @@ class NpiApiService
         ]);
     }
 
-    public function searchProviders(array $filters)
+    public function searchProviders(array $filters): array
     {
         // Validate first_name
         if (empty($filters['firstName']) || strlen($filters['firstName']) < 2) {
@@ -37,7 +38,15 @@ class NpiApiService
 
         try {
             $response = $this->client->request('GET', '', $params);
-            return json_decode($response->getBody(), true);
+            $responseData = json_decode($response->getBody(), true);
+
+            if (!Arr::has($responseData, 'result_count') || Arr::get($responseData, 'result_count') === 0) {
+                // 'result_count' is not set or its value is 0
+                return [];
+            } else {
+                // 'result_count' is set and its value is not 0
+                return Arr::get($responseData, 'results', []); // return 'results' if set; otherwise, return an empty array
+            }
         } catch (GuzzleException $e) {
             // Handle exception or return a default failure status
             return [
