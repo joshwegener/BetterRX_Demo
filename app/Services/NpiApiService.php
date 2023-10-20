@@ -43,6 +43,7 @@ class NpiApiService
         $params = [
             'query' => [
                 'version' => '2.1',
+                'limit' => 50,
                 'first_name' => $filters['firstName'],
                 'last_name' => $filters['lastName'],
                 'number' => $filters['npiNumber'],

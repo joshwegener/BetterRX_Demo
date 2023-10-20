@@ -18,9 +18,14 @@
     <tbody>
         @forelse($results as $result)
             <tr wire:loading.class="opacity-50">
-                <td>{{ $result['number'] }}</td>
-                <td>{{ $result['basic']['first_name'] }}</td>
-                <td>{{ $result['basic']['last_name'] }}</td>
+                @if($result['enumeration_type'] === 'NPI-1')
+                    <td>{{ $result['number'] }}</td>
+                    <td>{{ $result['basic']['first_name'] }}</td>
+                    <td>{{ $result['basic']['last_name'] }}</td>
+                @else
+                    <td>{{ $result['number'] }}</td>
+                    <td colspan="2">{{ $result['basic']['organization_name'] }}</td>
+                @endif
             </tr>
         @empty
             <tr>
