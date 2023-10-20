@@ -12,7 +12,7 @@
     <tbody>
         @forelse($results as $result)
             <tr wire:loading.class="opacity-50">
-                <td scope="row">{{ $result['number'] }}</td>
+                <td>{{ $result['number'] }}</td>
                 <td>{{ $result['basic']['first_name'] }}</td>
                 <td>{{ $result['basic']['last_name'] }}</td>
             </tr>
