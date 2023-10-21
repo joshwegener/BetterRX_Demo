@@ -2,18 +2,22 @@
 
 namespace App\Livewire;
 
+use App\Services\NpiApiService;
 use Livewire\Component;
 
 class ModalLoader extends Component
 {
     public string $npiNumber = '';
+    public array $providerData = [];
 
     protected $listeners = ['open-modal' => 'loadModal'];
 
-    public function loadModal(string $npiNumber)
+    public function loadModal(string $npiNumber, NpiApiService $api)
     {
         $this->npiNumber = $npiNumber;
-        //$this->dispatch('modal-open');
+
+        $results = $api->searchProviders([ 'npiNumber' => $this->npiNumber ]);
+        $this->providerData = $results[0];
     }
 
     public function render()
