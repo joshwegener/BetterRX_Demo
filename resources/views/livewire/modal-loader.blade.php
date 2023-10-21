@@ -14,7 +14,7 @@
     </div>
 </div> -->
 
-<div x-on:modal-open="open = true" x-show="open" class="modal" tabindex="-1">
+<div x-data="{ open: false }" x-on:modal-open="open = true" x-show="open" class="modal" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
