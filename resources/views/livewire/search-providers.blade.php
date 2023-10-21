@@ -56,4 +56,5 @@
     </table>
 
     @include('livewire.partial.pagination')
+    <livewire:modal-loader />
 </div>
