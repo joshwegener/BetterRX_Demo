@@ -12,6 +12,7 @@ class ModalLoader extends Component
 
     public function loadModal(string $npiNumber)
     {
+        $this->npiNumber = $npiNumber;
         //$this->dispatch('modal-open');
     }
 
