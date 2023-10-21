@@ -40,8 +40,6 @@ class NpiApiService
 
         $cacheKey = $this->getCacheKey($params);
 
-        var_dump($params);
-
         return cache()->remember($cacheKey, now()->addMinutes(60), function () use ($params) {
             return $this->queryApi($params);
         });

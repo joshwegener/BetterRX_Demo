@@ -8,7 +8,7 @@ use Livewire\Component;
 class SearchProviders extends Component
 {
     public string $firstName = '';
-    public string $lastName = 'a';
+    public string $lastName = '';
     public string $npiNumber = '';
     public string $taxonomyDescription = '';
     public string $city = '';
