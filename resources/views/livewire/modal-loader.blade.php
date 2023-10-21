@@ -1,4 +1,4 @@
-<div class="modal fade" id="providerDetails" tabindex="-1" aria-labelledby="providerDetailsLabel" aria-hidden="true" x-data="{ isOpen: false }" x-on:model-open="notify('model-open fired')" x-show="isOpen">
+<div class="modal fade" id="providerDetails" tabindex="-1" aria-labelledby="providerDetailsLabel" aria-hidden="true" x-data="{ isOpen: false }" x-on:model-open.window="alert('model-open fired')" x-show="isOpen">
   <div class="modal-dialog" x-show="isOpen">
     <div class="modal-content">
       <div class="modal-header">
