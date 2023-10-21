@@ -18,7 +18,7 @@ class ModalLoader extends Component
 
         $results = $api->searchProviders([ 'npiNumber' => $this->npiNumber ]);
         $this->providerData = $results[0];
-        $this->dispatch('open-modal');
+        $this->dispatch('modal-open');
     }
 
     public function render()
