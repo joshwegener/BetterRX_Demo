@@ -18,7 +18,7 @@ class NpiApiService
         ]);
     }
 
-    public function searchProviders(array $filters): array
+    public function searchProviders(array $filters, int $pageNumber = 0): array
     {
         $filters = $this->addWildcardToSearchTerm($filters);
 
@@ -26,6 +26,7 @@ class NpiApiService
             'query' => [
                 'version' => '2.1',
                 'limit' => 25,
+                'skip' => $pageNumber * 25,
                 'first_name' => $filters['firstName'],
                 'last_name' => $filters['lastName'],
                 'number' => $filters['npiNumber'],

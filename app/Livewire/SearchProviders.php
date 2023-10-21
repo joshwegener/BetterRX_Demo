@@ -14,18 +14,22 @@ class SearchProviders extends Component
     public $city;
     public $state;
     public $zip;
+    public $pageNumber = 0;
 
     public function render(NpiApiService $api)
     {
-        $results = $api->searchProviders([
-            'firstName' => $this->firstName,
-            'lastName' => $this->lastName,
-            'npiNumber' => $this->npiNumber,
-            'taxonomyDescription' => $this->taxonomyDescription,
-            'city' => $this->city,
-            'state' => $this->state,
-            'zip' => $this->zip,
-        ]);
+        $results = $api->searchProviders(
+            [
+                'firstName' => $this->firstName,
+                'lastName' => $this->lastName,
+                'npiNumber' => $this->npiNumber,
+                'taxonomyDescription' => $this->taxonomyDescription,
+                'city' => $this->city,
+                'state' => $this->state,
+                'zip' => $this->zip,
+            ],
+            $this->pageNumber
+        );
 
         return view('livewire.search-providers')->with(compact('results'));
     }
