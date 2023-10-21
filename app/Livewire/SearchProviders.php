@@ -7,29 +7,30 @@ use Livewire\Component;
 
 class SearchProviders extends Component
 {
-    public $firstName;
-    public $lastName;
-    public $npiNumber;
-    public $taxonomyDescription;
-    public $city;
-    public $state;
-    public $zip;
-    public $pageNumber = 0;
+    public string $firstName;
+    public string $lastName;
+    public string $npiNumber;
+    public string $taxonomyDescription;
+    public string $city;
+    public string $state;
+    public string $zip;
+    public int $pageNumber = 0;
+    public bool $hasMorePages = false;
 
     public function render(NpiApiService $api)
     {
-        $results = $api->searchProviders(
-            [
-                'firstName' => $this->firstName,
-                'lastName' => $this->lastName,
-                'npiNumber' => $this->npiNumber,
-                'taxonomyDescription' => $this->taxonomyDescription,
-                'city' => $this->city,
-                'state' => $this->state,
-                'zip' => $this->zip,
-            ],
-            $this->pageNumber
-        );
+        $filters = [
+            'firstName' => $this->firstName,
+            'lastName' => $this->lastName,
+            'npiNumber' => $this->npiNumber,
+            'taxonomyDescription' => $this->taxonomyDescription,
+            'city' => $this->city,
+            'state' => $this->state,
+            'zip' => $this->zip,
+        ];
+
+        $results = $api->searchProviders($filters, $this->pageNumber);
+        $this->hasMorePages = (bool) count($api->searchProviders($filters, $this->pageNumber + 1));
 
         return view('livewire.search-providers')->with(compact('results'));
     }

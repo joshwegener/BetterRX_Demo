@@ -56,14 +56,16 @@
     </tbody>
     </table>
 
-    <nav>
-        <ul class="pagination justify-content-end">
-            <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1">Previous</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-            </li>
-        </ul>
-    </nav>
+    @if(count($results) > 0)
+        <nav>
+            <ul class="pagination justify-content-end">
+                <li class="page-item {{ $this->pageNumber < 0 ? 'disabled': '' }}">
+                    <a class="page-link" href="#">Previous</a>
+                </li>
+                <li class="page-item {{ $this->hasMorePages ? '': 'disabled' }}">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
+    @endif
 </div>
