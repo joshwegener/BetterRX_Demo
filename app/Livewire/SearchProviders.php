@@ -8,7 +8,7 @@ use Livewire\Component;
 class SearchProviders extends Component
 {
     public string $firstName = '';
-    public string $lastName = '';
+    public string $lastName = 'a';
     public string $npiNumber = '';
     public string $taxonomyDescription = '';
     public string $city = '';
@@ -30,7 +30,7 @@ class SearchProviders extends Component
         ];
 
         $results = $api->searchProviders($filters, $this->pageNumber);
-        $this->hasMorePages = (bool) count($api->searchProviders($filters, $this->pageNumber + 1));
+        $this->hasMorePages = count($api->searchProviders($filters, $this->pageNumber + 1));
 
         return view('livewire.search-providers')->with(compact('results'));
     }

@@ -5,6 +5,7 @@ namespace App\Services;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Log;
 
 class NpiApiService
 {
@@ -39,6 +40,8 @@ class NpiApiService
 
         $cacheKey = $this->getCacheKey($params);
 
+        var_dump($params);
+
         return cache()->remember($cacheKey, now()->addMinutes(60), function () use ($params) {
             return $this->queryApi($params);
         });
@@ -58,7 +61,9 @@ class NpiApiService
                 return Arr::get($responseData, 'results', []); // return 'results' if set; otherwise, return an empty array
             }
         } catch (GuzzleException $e) {
-            // Handle exception or return a default failure status
+            // GuzzleException is thrown when an error occurs while sending the request.
+            // Log the error and return an error message.
+            Log::error($e->getMessage(), ['exception' => $e]);
             return [
                 'status' => 'failure',
                 'message' => 'Failed to fetch data from NPI Registry',
