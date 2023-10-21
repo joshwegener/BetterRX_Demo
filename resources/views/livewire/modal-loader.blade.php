@@ -7,7 +7,7 @@
                     <button type="button" class="btn-close" @click="open = false" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <iframe :src="open ? '{{ $modalUrl }}' : ''" class="w-100" style="height:60vh;" frameborder="0"></iframe>
+                    data goes here
                 </div>
             </div>
         </div>
