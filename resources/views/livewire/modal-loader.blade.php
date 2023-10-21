@@ -1,4 +1,4 @@
-<div class="modal fade" id="providerDetails" tabindex="-1" aria-labelledby="providerDetailsLabel" aria-hidden="true" x-show"npiNumber">
+<div class="modal fade" id="providerDetails" tabindex="-1" aria-labelledby="providerDetailsLabel" aria-hidden="true" x-data="{ isOpen: false }" x-on:open-model="isOpen = true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
