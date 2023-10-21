@@ -7,12 +7,11 @@ use Livewire\Component;
 class ModalLoader extends Component
 {
     public $modalUrl;
+    protected $listeners = ['open-modal' => 'loadModal'];
 
-    protected $listeners = ['loadModal'];
-
-    public function loadModal($url)
+    public function loadModal($data)
     {
-        $this->modalUrl = $url;
+        $this->modalUrl = $data['url'];
         $this->dispatchBrowserEvent('modal-open');
     }
 
