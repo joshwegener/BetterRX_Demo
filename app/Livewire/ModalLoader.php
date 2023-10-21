@@ -9,9 +9,9 @@ class ModalLoader extends Component
     public $modalUrl;
     protected $listeners = ['open-modal' => 'loadModal'];
 
-    public function loadModal($data)
+    public function loadModal($url)
     {
-        $this->modalUrl = $data['url'];
+        $this->modalUrl = $url;
         $this->dispatchBrowserEvent('modal-open');
     }
 
