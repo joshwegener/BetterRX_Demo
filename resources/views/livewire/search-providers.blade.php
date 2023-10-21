@@ -30,8 +30,6 @@
         </div>
     </form>
 
-    @include('livewire.partial.pagination')
-
     <table class="table table-striped">
     <thead>
         <tr>
