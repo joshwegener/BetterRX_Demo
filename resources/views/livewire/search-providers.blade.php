@@ -30,7 +30,7 @@
         </div>
     </form>
 
-    @include('livewire.partial.pagination');
+    @include('livewire.partial.pagination')
 
     <table class="table table-striped">
     <thead>
@@ -58,5 +58,5 @@
     </tbody>
     </table>
 
-    @include('livewire.partial.pagination');
+    @include('livewire.partial.pagination')
 </div>
