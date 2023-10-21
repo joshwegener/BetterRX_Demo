@@ -21,7 +21,8 @@ class ModalLoader extends Component
         //$this->providerData = $results[0];
         
         $this->providerData = $providerData;
-        $this->dispatch('modal-open');
+        dd($this->providerData);
+        //$this->dispatch('modal-open');
     }
 
     public function render()
