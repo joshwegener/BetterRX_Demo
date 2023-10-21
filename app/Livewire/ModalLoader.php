@@ -12,15 +12,15 @@ class ModalLoader extends Component
 
     protected $listeners = ['open-modal' => 'loadModal'];
 
-    //public function loadModal(string $npiNumber, NpiApiService $api)
-    public function loadModal(array $providerData)
+    public function loadModal(string $npiNumber, NpiApiService $api)
+    //public function loadModal(array $providerData)
     {
         //$this->npiNumber = $npiNumber;
 
         //$results = $api->searchProviders([ 'npiNumber' => $this->npiNumber ]);
         //$this->providerData = $results[0];
         
-        $this->providerData = $providerData;
+        //$this->providerData = $providerData;
         $this->dispatch('modal-open');
     }
 
