@@ -40,7 +40,7 @@
     <tbody>
         @forelse($results as $result)
             <tr wire:loading.class="opacity-50">
-            <td><a href="#" x-data @click="$dispatch('open-modal', {npiNumber: '{{ $result['number'] }}'})" data-bs-toggle="modal" data-bs-target="#providerDetails">{{ $result['number'] }}</a></td>
+            <td><a href="#" x-data @click="$dispatch('open-modal', {npiNumber: '{{ $result['number'] }}'})">{{ $result['number'] }}</a></td>
                 @if($result['enumeration_type'] === 'NPI-1')
                     <td>{{ Str::title($result['basic']['first_name'] . ' ' . $result['basic']['last_name']) }}</td>
                 @else
