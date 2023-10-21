@@ -12,7 +12,7 @@ class ModalLoader extends Component
     public function loadModal($url)
     {
         $this->modalUrl = $url;
-        $this->dispatchBrowserEvent('modal-open');
+        $this->dispatch('modal-open');
     }
 
     public function render()
