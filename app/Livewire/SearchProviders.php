@@ -34,4 +34,14 @@ class SearchProviders extends Component
 
         return view('livewire.search-providers')->with(compact('results'));
     }
+
+    public function nextPage()
+    {
+        $this->pageNumber++;
+    }
+
+    public function previousPage()
+    {
+        $this->pageNumber--;
+    }
 }
