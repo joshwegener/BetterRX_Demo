@@ -15,6 +15,8 @@ class ModalLoader extends Component
     public function loadModal(string $npiNumber, NpiApiService $api)
     //public function loadModal(array $providerData)
     {
+        // print debug info
+        dd($npiNumber);
         //$this->npiNumber = $npiNumber;
 
         //$results = $api->searchProviders([ 'npiNumber' => $this->npiNumber ]);
