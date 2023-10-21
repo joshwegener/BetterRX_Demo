@@ -33,7 +33,7 @@
     <table class="table table-striped">
     <thead>
         <tr>
-            <th scope="col">NPI</th>
+            <th scope="col-2">NPI</th>
             <th scope="col">Name</th>
         </tr>
     </thead>
