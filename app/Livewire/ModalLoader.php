@@ -16,11 +16,10 @@ class ModalLoader extends Component
     //public function loadModal(array $providerData)
     {
         // print debug info
-        dd($npiNumber);
         //$this->npiNumber = $npiNumber;
 
-        //$results = $api->searchProviders([ 'npiNumber' => $this->npiNumber ]);
-        //$this->providerData = $results[0];
+        $results = $api->searchProviders([ 'npiNumber' => $this->npiNumber ]);
+        $this->providerData = $results[0];
         
         //$this->providerData = $providerData;
         $this->dispatch('modal-open');
