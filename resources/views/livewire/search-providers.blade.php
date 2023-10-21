@@ -59,7 +59,7 @@
     @if(count($results) > 0)
         <nav>
             <ul class="pagination justify-content-end">
-                <li class="page-item {{ $this->pageNumber < 0 ? 'disabled': '' }}">
+                <li class="page-item {{ $this->pageNumber ? 'disabled': '' }}">
                     <a class="page-link" href="#">Previous</a>
                 </li>
                 <li class="page-item {{ $this->hasMorePages ? '': 'disabled' }}">
