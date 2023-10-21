@@ -28,13 +28,13 @@ class NpiApiService
                 'version' => '2.1',
                 'limit' => 25,
                 'skip' => $pageNumber * 25,
-                'first_name' => $filters['firstName'],
-                'last_name' => $filters['lastName'],
-                'number' => $filters['npiNumber'],
-                'taxonomy_description' => $filters['taxonomyDescription'],
-                'city' => $filters['city'],
-                'state' => $filters['state'],
-                'postal_code' => $filters['zip'],
+                'first_name' => $filters['firstName'] ?? '',
+                'last_name' => $filters['lastName'] ?? '',
+                'number' => $filters['npiNumber'] ?? '',
+                'taxonomy_description' => $filters['taxonomyDescription'] ?? '',
+                'city' => $filters['city'] ?? '',
+                'state' => $filters['state'] ?? '',
+                'postal_code' => $filters['zip'] ?? '',
             ]
         ];
 
@@ -72,23 +72,23 @@ class NpiApiService
 
     private function addWildcardToSearchTerm(array $filters): array
     {
-        if (strlen($filters['firstName']) >= 2) {
+        if (isset($filters['firstName']) && strlen($filters['firstName']) >= 2) {
             $filters['firstName'] .= '*';
         }
 
-        if (strlen($filters['lastName']) >= 2) {
+        if (isset($filters['lastName']) && strlen($filters['lastName']) >= 2) {
             $filters['lastName'] .= '*';
         }
 
-        if (strlen($filters['taxonomyDescription']) >= 2) {
+        if (isset($filters['taxonomyDescription']) && strlen($filters['taxonomyDescription']) >= 2) {
             $filters['taxonomyDescription'] .= '*';
         }
 
-        if (strlen($filters['city']) >= 2) {
+        if (isset($filters['city']) && strlen($filters['city']) >= 2) {
             $filters['city'] .= '*';
         }
 
-        if (strlen($filters['zip']) >= 2) {
+        if (isset($filters['zip']) && strlen($filters['zip']) >= 2) {
             $filters['zip'] .= '*';
         }
 
