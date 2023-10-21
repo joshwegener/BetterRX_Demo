@@ -41,7 +41,7 @@
         @forelse($results as $result)
             <tr wire:loading.class="opacity-50">
             <td><a href="#" wire:click="$emit('loadModal', 'https://npiregistry.cms.hhs.gov/provider-view/{{ $result['number'] }}')">{{ $result['number'] }}</a></td>
-            <td><a href="#" x-data @click="$dispatch('open-modal', {url: 'https://npiregistry.cms.hhs.gov/provider-view/{{ $result['number'] }}'})">{{ $result['number'] }}</a></td>
+            <td><a href="#" x-data @click="$dispatch('open-modal', {data: 'https://npiregistry.cms.hhs.gov/provider-view/{{ $result['number'] }}'})">{{ $result['number'] }}</a></td>
                 @if($result['enumeration_type'] === 'NPI-1')
                     <td>{{ Str::title($result['basic']['first_name'] . ' ' . $result['basic']['last_name']) }}</td>
                 @else
