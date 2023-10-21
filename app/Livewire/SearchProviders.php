@@ -7,13 +7,13 @@ use Livewire\Component;
 
 class SearchProviders extends Component
 {
-    public string $firstName;
-    public string $lastName;
-    public string $npiNumber;
-    public string $taxonomyDescription;
-    public string $city;
-    public string $state;
-    public string $zip;
+    public string $firstName = '';
+    public string $lastName = '';
+    public string $npiNumber = '';
+    public string $taxonomyDescription = '';
+    public string $city = '';
+    public string $state = '';
+    public string $zip = '';
     public int $pageNumber = 0;
     public bool $hasMorePages = false;
 
