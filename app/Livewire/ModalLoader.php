@@ -6,13 +6,13 @@ use Livewire\Component;
 
 class ModalLoader extends Component
 {
-    public $modalUrl;
+    public string $npiNumber = '';
+
     protected $listeners = ['open-modal' => 'loadModal'];
 
-    public function loadModal($url)
+    public function loadModal(string $npiNumber)
     {
-        $this->modalUrl = $url;
-        $this->dispatch('modal-open');
+        //$this->dispatch('modal-open');
     }
 
     public function render()
