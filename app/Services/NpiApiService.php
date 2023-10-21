@@ -72,23 +72,23 @@ class NpiApiService
 
     private function addWildcardToSearchTerm(array $filters): array
     {
-        if (strlen($filters['firstName']) >= 2) {
+        if (isset($filters['firstName']) && strlen($filters['firstName']) >= 2) {
             $filters['firstName'] .= '*';
         }
 
-        if (strlen($filters['lastName']) >= 2) {
+        if (isset($filters['lastName']) && strlen($filters['lastName']) >= 2) {
             $filters['lastName'] .= '*';
         }
 
-        if (strlen($filters['taxonomyDescription']) >= 2) {
+        if (isset($filters['taxonomyDescription']) && strlen($filters['taxonomyDescription']) >= 2) {
             $filters['taxonomyDescription'] .= '*';
         }
 
-        if (strlen($filters['city']) >= 2) {
+        if (isset($filters['city']) && strlen($filters['city']) >= 2) {
             $filters['city'] .= '*';
         }
 
-        if (strlen($filters['zip']) >= 2) {
+        if (isset($filters['zip']) && strlen($filters['zip']) >= 2) {
             $filters['zip'] .= '*';
         }
 

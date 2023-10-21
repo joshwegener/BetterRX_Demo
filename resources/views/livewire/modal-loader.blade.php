@@ -7,7 +7,7 @@
       </div>
       <div class="modal-body">
         -- {{ $npiNumber }} --
-        var_dump($providerData);
+        {{ var_dump($providerData) }}
       </div>
     </div>
   </div>
