@@ -8,7 +8,6 @@ use Livewire\Component;
 class ModalLoader extends Component
 {
     public string $npiNumber = '';
-    public bool $isOpen = false;
     public array $providerData = [];
 
     protected $listeners = ['open-modal' => 'loadModal'];
@@ -19,7 +18,6 @@ class ModalLoader extends Component
 
         $results = $api->searchProviders([ 'npiNumber' => $this->npiNumber ]);
         $this->providerData = $results[0];
-        $this->isOpen = true;
         
         $this->dispatch('modal-open');
     }
