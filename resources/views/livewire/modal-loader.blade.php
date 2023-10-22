@@ -31,6 +31,21 @@
                 @endif
               </td>
             </tr>
+            @if(count($providerData['other_names']) > 0)
+            <tr>
+              <td>Other Name(s)</td>
+              <td>
+                @foreach($providerData['other_names'] as $otherName)
+                  {{ trim(implode(' ', array_filter([
+                    ($otherName['name_prefix'] ?? '') !== '--' ? ($otherName['name_prefix'] ?? '') : '',
+                    $otherName['first_name'] ?? '',
+                    $otherName['last_name'] ?? '',
+                    ($otherName['name_suffix'] ?? '') !== '--' ? ($otherName['name_suffix'] ?? '') : '',
+                    $otherName['credential'] ?? ''
+                  ]))) }}<br/>
+              </td>
+            </tr>
+            @endif
             @if(isset($providerData['basic']['gender']))
             <tr>
               <td>Gender</td>
