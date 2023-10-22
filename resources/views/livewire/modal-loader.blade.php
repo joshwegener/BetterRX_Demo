@@ -94,7 +94,7 @@
               <tr>
                 <td>Taxonomy</td>
                 <td>
-                  @foreach($providerData['taxonomies'] as $taxonomy)
+                  @if(count(['taxonomies']) > 0)
                     <table class="table table-striped">
                       <tr>
                         <td>Code</td>
@@ -104,6 +104,7 @@
                         <td>License</td>
                         <td>Primary</td>
                       </tr>
+                      @foreach($providerData['taxonomies'] as $taxonomy)
                       <tr>
                         <td>{{ $taxonomy['code'] }}</td>
                         <td>{{ $taxonomy['taxonomy_group'] }}</td>
@@ -112,8 +113,9 @@
                         <td>{{ $taxonomy['license'] }}</td>
                         <td>{{ $taxonomy['primary'] ? 'Yes' : 'No' }}</td>
                       </tr>
+                      @endforeach
                     </table>
-                  @endforeach
+                  @endif
                 </td>
               </tr>
           </tbody>
