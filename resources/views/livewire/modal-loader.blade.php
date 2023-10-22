@@ -1,4 +1,4 @@
-<div class="modal" id="providerDetails" tabindex="-1" x-data="{ isOpen: false }" @modal-open="isOpen = true; alert($wire.isOpen)" x-show="isOpen">
+<div class="modal" id="providerDetails" tabindex="-1" x-data="{ isOpen: false }" @modal-open="myModal = new bootstrap.Modal(document.getElementById('providerDetails')); myModal.show();" x-show="isOpen">
   <div class="modal-dialog" x-show="isOpen">
     <div class="modal-content">
       <div class="modal-header">
