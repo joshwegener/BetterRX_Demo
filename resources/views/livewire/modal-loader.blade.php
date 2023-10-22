@@ -8,7 +8,13 @@
       <div class="modal-body">
         @if(count($providerData) > 0)
           @if($providerData['enumeration_type'] == 'NPI-1')
-            {{ $providerData['basic']['name_prefix'] . ' ' . $providerData['basic']['first_name'] . ' ' . $providerData['basic']['last_name'] . ' ' . $providerData['basic']['name_suffix'] . ' ' . $providerData['basic']['credential'] }}
+            {{ trim(implode(' ', array_filter([
+              $providerData['basic']['name_prefix'] ?? '',
+              $providerData['basic']['first_name'] ?? '',
+              $providerData['basic']['last_name'] ?? '',
+              $providerData['basic']['name_suffix'] !== '--' ? $providerData['basic']['name_suffix'] : '',
+              $providerData['basic']['credential'] ?? ''
+            ]))) }}
           @endif
           {{ var_dump($providerData) }}
         @endif
