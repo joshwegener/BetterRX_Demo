@@ -1,3 +1,4 @@
+<div>
 <div class="modal fade" id="providerDetails" tabindex="-1" aria-labelledby="providerDetailsLabel" aria-hidden="true" x-data="{ isOpen: false }" @modal-open="isOpen = true; alert($wire.isOpen)" x-show="$wire.isOpen">
   <div class="modal-dialog" x-show="$wire.isOpen">
     <div class="modal-content">
@@ -28,4 +29,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>
