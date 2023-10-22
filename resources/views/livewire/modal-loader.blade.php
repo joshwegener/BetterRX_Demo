@@ -111,7 +111,7 @@
             <tr>
                 <td>Other Identifiers</td>
                 <td>
-                  @if(count(['identifiers']) > 0)
+                  @if(count($providerData['identifiers']) > 0)
                     <table class="table table-striped">
                       <tr>
                         <td>Code</td>
