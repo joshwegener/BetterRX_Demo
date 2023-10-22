@@ -74,8 +74,8 @@
               </td>
             </tr>
             @endif
-            <tr>
-              @foreach($providerData['addresses'] as $address)
+            @foreach($providerData['addresses'] as $address)
+              <tr>
                 @if($address['address_purpose'] == 'MAILING')
                   <td>Mailing Address</td>
                 @else
@@ -89,7 +89,8 @@
                   {{ $address['city'] }}, {{ $address['state'] }} {{ $address['postal_code'] }}<br/>
                   {{ $address['telephone_number'] ?? '' }}
                 </td>
-              @endforeach
+              </tr>
+            @endforeach
           </tbody>
           </table>
           {{ var_dump($providerData) }}
