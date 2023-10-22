@@ -7,20 +7,51 @@
       </div>
       <div class="modal-body">
           @if(count($providerData) > 0)
-          <div class="jumbotron text-center">
-            <h1 class="display-4">
-              @if($providerData['enumeration_type'] == 'NPI-1')
-                {{ trim(implode(' ', array_filter([
-                  ($providerData['basic']['name_prefix'] ?? '') !== '--' ? ($providerData['basic']['name_prefix'] ?? '') : '',
-                  $providerData['basic']['first_name'] ?? '',
-                  $providerData['basic']['last_name'] ?? '',
-                  ($providerData['basic']['name_suffix'] ?? '') !== '--' ? ($providerData['basic']['name_suffix'] ?? '') : '',
-                  $providerData['basic']['credential'] ?? ''
-                ]))) }}
-              @else
-              @endif
-            </h1>
-          </div>
+          <table class="table table-striped">
+          <thead>
+          <tr>
+            <th class="col">Name</th>
+            <th class="col">Value</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Name</td>
+              <td>
+                @if($providerData['enumeration_type'] == 'NPI-1')
+                  {{ trim(implode(' ', array_filter([
+                    ($providerData['basic']['name_prefix'] ?? '') !== '--' ? ($providerData['basic']['name_prefix'] ?? '') : '',
+                    $providerData['basic']['first_name'] ?? '',
+                    $providerData['basic']['last_name'] ?? '',
+                    ($providerData['basic']['name_suffix'] ?? '') !== '--' ? ($providerData['basic']['name_suffix'] ?? '') : '',
+                    $providerData['basic']['credential'] ?? ''
+                  ]))) }}
+                @else
+                @endif
+              </td>
+            </tr>
+            <tr>
+              <td>NPI</td>
+              <td>{{ $providerData['number'] }}</td>
+            </tr>
+            <tr>
+              <td>Enumeration Date</td>
+              <td>{{ $providerData['basic']['enumeration_date'] }}</td>
+            </tr>
+            <tr>
+              <td>NPI Type</td>
+              <td>{{ $providerData['enumeration_type'] }}</td>
+            </tr>
+            <tr>
+              <td>Is Sole Proprietor?</td>
+              <td>{{ $providerData['basic']['sole_proprietor'] }}</td>
+            </tr>
+            <tr>
+              <td>Active</td>
+              <td>{{ $providerData['basic']['status'] == 'A' ? 'Active' : 'Inactive' }}</td>
+            </tr>
+          </tbody>
+          </table>
           {{ var_dump($providerData) }}
         @endif
       </div>
