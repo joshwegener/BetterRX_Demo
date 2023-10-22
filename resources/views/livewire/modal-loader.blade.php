@@ -95,29 +95,21 @@
                 <td>Taxonomy</td>
                 <td>
                   @foreach($providerData['taxonomies'] as $taxonomy)
-                    <table>
+                    <table class="table table-striped">
                       <tr>
                         <td>Code</td>
-                        <td>{{ $taxonomy['code'] }}</td>
-                      </tr>
-                      <tr>
                         <td>Group</td>
-                        <td>{{ $taxonomy['taxonomy_group'] }}</td>
-                      </tr>
-                      <tr>
                         <td>Description</td>
-                        <td>{{ $taxonomy['desc'] }}</td>
-                      </tr>
-                      <tr>
                         <td>State</td>
-                        <td>{{ $taxonomy['state'] }}</td>
-                      </tr>
-                      <tr>
                         <td>License</td>
-                        <td>{{ $taxonomy['license'] }}</td>
+                        <td>Primary</td>
                       </tr>
                       <tr>
-                        <td>Primary</td>
+                        <td>{{ $taxonomy['code'] }}</td>
+                        <td>{{ $taxonomy['taxonomy_group'] }}</td>
+                        <td>{{ $taxonomy['desc'] }}</td>
+                        <td>{{ $taxonomy['state'] }}</td>
+                        <td>{{ $taxonomy['license'] }}</td>
                         <td>{{ $taxonomy['primary'] ? 'Yes' : 'No' }}</td>
                       </tr>
                     </table>
