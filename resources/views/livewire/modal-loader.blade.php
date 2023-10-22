@@ -111,20 +111,14 @@
             <tr>
               <td>Secondary Practice Address(es)</td>
               <td>
-                @if(count($providerData['practiceLocations']) > 0)
-                    @foreach($providerData['practiceLocations'] as $address)
-                    B
-                    <tr>
-                      {{ $address['address_1'] }}<br/>
-                      @if(isset($address['address_2']))
-                        {{ $address['address_2'] }}<br/>
-                      @endif
-                      {{ $address['city'] }}, {{ $address['state'] }} {{ $address['postal_code'] }}<br/>
-                      {{ $address['telephone_number'] ?? '' }}
-                    </tr>
-                    @endforeach
-                  </table>
-                @endif
+                @foreach($providerData['practiceLocations'] as $address)
+                  {{ $address['address_1'] }}<br/>
+                  @if(isset($address['address_2']))
+                    {{ $address['address_2'] }}<br/>
+                  @endif
+                  {{ $address['city'] }}, {{ $address['state'] }} {{ $address['postal_code'] }}<br/>
+                  {{ $address['telephone_number'] ?? '' }}<br/><br/>
+                @endforeach
             </tr>
             <tr>
                 <td>Other Identifiers</td>
