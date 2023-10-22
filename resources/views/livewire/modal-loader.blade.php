@@ -30,6 +30,12 @@
                 @endif
               </td>
             </tr>
+            @if(isset($providerData['basic']['gender']))
+            <tr>
+              <td>Gender</td>
+              <td>{{ $providerData['basic']['gender'] == 'M' ? 'Male' : 'Female' }}</td>
+            </tr>
+            @endif
             <tr>
               <td>NPI</td>
               <td>{{ $providerData['number'] }}</td>
@@ -42,10 +48,12 @@
               <td>NPI Type</td>
               <td>{{ $providerData['enumeration_type'] }}</td>
             </tr>
-            <tr>
-              <td>Is Sole Proprietor?</td>
-              <td>{{ $providerData['basic']['sole_proprietor'] }}</td>
-            </tr>
+            @if(isset($providerData['basic']['sole_proprietor']))
+              <tr>
+                <td>Sole Proprietor</td>
+                <td>{{ $providerData['basic']['sole_proprietor'] }}</td>
+              </tr>
+            @endif
             <tr>
               <td>Active</td>
               <td>{{ $providerData['basic']['status'] == 'A' ? 'Active' : 'Inactive' }}</td>
