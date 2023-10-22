@@ -12,7 +12,7 @@
               $providerData['basic']['name_prefix'] ?? '',
               $providerData['basic']['first_name'] ?? '',
               $providerData['basic']['last_name'] ?? '',
-              $providerData['basic']['name_suffix'] !== '--' ? $providerData['basic']['name_suffix'] : '',
+              ($providerData['basic']['name_suffix'] ?? '') !== '--' ? ($providerData['basic']['name_suffix'] ?? '') : '',
               $providerData['basic']['credential'] ?? ''
             ]))) }}
           @endif
