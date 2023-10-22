@@ -115,11 +115,10 @@
                     <table class="table table-striped">
                       <tr>
                         <td>Code</td>
-                        <td>Group</td>
                         <td>Description</td>
+                        <td>Issuer</td>
+                        <td>Identifier</td>
                         <td>State</td>
-                        <td>License</td>
-                        <td>Primary</td>
                       </tr>
                       @foreach($providerData['identifiers'] as $identifier)
                       <tr>
