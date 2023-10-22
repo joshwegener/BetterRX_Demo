@@ -209,7 +209,6 @@
               </tr>
           </tbody>
           </table>
-          {{ var_dump($providerData) }}
         @endif
       </div>
     </div>
