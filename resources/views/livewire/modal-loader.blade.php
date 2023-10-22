@@ -43,6 +43,7 @@
                     ($otherName['name_suffix'] ?? '') !== '--' ? ($otherName['name_suffix'] ?? '') : '',
                     $otherName['credential'] ?? ''
                   ]))) }}<br/>
+                @endforeach
               </td>
             </tr>
             @endif
