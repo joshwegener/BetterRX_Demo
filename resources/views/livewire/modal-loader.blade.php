@@ -121,6 +121,41 @@
                 @endforeach
             </tr>
             <tr>
+              <td>Health Information Exchange</td>
+              <td>
+                @foreach($providerData['endpoints'] as $endpoint)
+                <table class="table table-striped">
+                  <tr>
+                    <td>Endpoint Type</td>
+                    <td>Endpoint</td>
+                    <td>Endpoint Description</td>
+                    <td>Use</td>
+                    <td>Content Type</td>
+                    <td>Affiliation</td>
+                    <td>Endpoint Location</td>
+                  </tr>
+                  @foreach($providerData['endpoints'] as $endpoint)
+                  <tr>
+                    <td>{{ $endpoint['endpointType'] }}</td>
+                    <td>{{ $endpoint['endpoint'] }}</td>
+                    <td>{{ $endpoint['endpointTypeDescription'] }}</td>
+                    <td>{{ $endpoint['useDescription'] }}</td>
+                    <td>{{ $endpoint['address_type'] }}</td>
+                    <td>{{ $endpoint['affiliation'] == 'N' ? 'No' : 'Yes' }}</td>
+                    <td>
+                      {{ $endpoint['address_1'] }}<br/>
+                      @if(isset($endpoint['address_2']))
+                        {{ $endpoint['address_2'] }}<br/>
+                      @endif
+                      {{ $endpoint['city'] }}, {{ $endpoint['state'] }} {{ $endpoint['postal_code'] }}
+                    </td>
+                  </tr>
+                  @endforeach
+                </table>
+                @endforeach
+              </td>
+            </tr>
+            <tr>
                 <td>Other Identifiers</td>
                 <td>
                   @if(count($providerData['identifiers']) > 0)
