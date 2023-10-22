@@ -108,6 +108,32 @@
                 </td>
               </tr>
             @endforeach
+            <tr>
+                <td>Other Identifiers</td>
+                <td>
+                  @if(count(['identifiers']) > 0)
+                    <table class="table table-striped">
+                      <tr>
+                        <td>Code</td>
+                        <td>Group</td>
+                        <td>Description</td>
+                        <td>State</td>
+                        <td>License</td>
+                        <td>Primary</td>
+                      </tr>
+                      @foreach($providerData['identifiers'] as $identifier)
+                      <tr>
+                        <td>{{ $identifier['code'] }}</td>
+                        <td>{{ $identifier['desc'] }}</td>
+                        <td>{{ $identifier['issuer'] }}</td>
+                        <td>{{ $identifier['identifier'] }}</td>
+                        <td>{{ $identifier['state'] }}</td>
+                      </tr>
+                      @endforeach
+                    </table>
+                  @endif
+                </td>
+              </tr>
               <tr>
                 <td>Taxonomy</td>
                 <td>
