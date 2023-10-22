@@ -10,7 +10,7 @@
           <table class="table table-striped">
           <thead>
           <tr>
-            <th class="col-2">Name</th>
+            <th class="col-3">Name</th>
             <th class="col">Value</th>
           </tr>
           </thead>
@@ -74,6 +74,22 @@
               </td>
             </tr>
             @endif
+            <tr>
+              @foreach($providerData['addresses'] as $address)
+                @if($address['address_purpose'] == 'MAILING')
+                  <td>Mailing Address</td>
+                @else
+                  <td>Practice Address</td>
+                @endif
+                <td>
+                  {{ $address['address_1'] }}<br/>
+                  @if(isset($address['address_2']))
+                    {{ $address['address_2'] }}<br/>
+                  @endif
+                  {{ $address['city'] }}, {{ $address['state'] }} {{ $address['postal_code'] }}<br/>
+                  {{ $address['telephone_number'] ?? '' }}
+                </td>
+              @endforeach
           </tbody>
           </table>
           {{ var_dump($providerData) }}
