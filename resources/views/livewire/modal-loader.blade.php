@@ -10,7 +10,7 @@
           <table class="table table-striped">
           <thead>
           <tr>
-            <th class="col">Name</th>
+            <th class="col-2">Name</th>
             <th class="col">Value</th>
           </tr>
           </thead>
@@ -27,6 +27,7 @@
                     $providerData['basic']['credential'] ?? ''
                   ]))) }}
                 @else
+                  {{ $providerData['basic']['organization_name'] }}
                 @endif
               </td>
             </tr>
@@ -58,6 +59,21 @@
               <td>Active</td>
               <td>{{ $providerData['basic']['status'] == 'A' ? 'Active' : 'Inactive' }}</td>
             </tr>
+            @if($providerData['enumeration_type'] == 'NPI-2')
+            <tr>
+              <td>Authorized Official Information</td>
+              <td>
+                Name:
+                {{ trim(implode(' ', array_filter([
+                  ($providerData['basic']['authorized_official_name_prefix'] ?? '') !== '--' ? ($providerData['basic']['authorized_official_name_prefix'] ?? '') : '',
+                  $providerData['basic']['authorized_official_first_name'] ?? '',
+                  $providerData['basic']['authorized_official_last_name'] ?? ''
+                ]))) }}<br/>
+                Position: {{ $providerData['basic']['authorized_official_title_or_position'] ?? '' }}<br/>
+                Phone: {{ $providerData['basic']['authorized_official_telephone_number'] ?? '' }}
+              </td>
+            </tr>
+            @endif
           </tbody>
           </table>
           {{ var_dump($providerData) }}
