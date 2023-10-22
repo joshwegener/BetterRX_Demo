@@ -37,10 +37,11 @@
               <td>
                 @foreach($providerData['other_names'] as $otherName)
                   {{ trim(implode(' ', array_filter([
-                    ($otherName['name_prefix'] ?? '') !== '--' ? ($otherName['name_prefix'] ?? '') : '',
+                    $otherName['type'] . ': ',
+                    ($otherName['prefix'] ?? '') !== '--' ? ($otherName['prefix'] ?? '') : '',
                     $otherName['first_name'] ?? '',
                     $otherName['last_name'] ?? '',
-                    ($otherName['name_suffix'] ?? '') !== '--' ? ($otherName['name_suffix'] ?? '') : '',
+                    ($otherName['suffix'] ?? '') !== '--' ? ($otherName['suffix'] ?? '') : '',
                     $otherName['credential'] ?? ''
                   ]))) }}<br/>
                 @endforeach
